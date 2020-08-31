@@ -1,0 +1,70 @@
+1.) Burp Suite download & Installation:-
+	- Download the Burp suite and open it on default setting
+A) Proxy Tab:-
+	- Proxy Tab> Goto proxy tab > checked intercept is "ON" >
+	- Option Tab> Proxy listener already checked the defualt proxy i.e 127.0.0.1:8080
+	- If you want to test on secure site "HTTPS" then download the CA burp certificate which export from BURP and import into 
+	Browser
+	- Click on import/export for download Certificate and rename extension ".der"
+	- Import the Burp CA certificate into Browser Certificate> Manage Certificate > Authorities > Import Our BURP CA 
+	(As as PortSwigger)
+	-  We can change any from BURP.
+
+B) Target & Spider:-
+	i) Target:-  Target is basically set the target or structure when we visit the site
+		- Opent the website > Check proxy tab	
+		- In the target we can see the structure view of Website
+		- It used the capture the link where we go and it will show in structure view in target tab
+	ii) Scope:-  We can test the particular website 
+		- It is easy to spidering
+		- Website(app.networrk.in) > right click Add to scope 
+	iii) Spider:- crawling the links internally
+		-> Passive spidering - Update the site without sending request
+	 	      - Almost saving the duplicate request of the site
+		-> Form Submission - Automatically assign the HTML form fileds value
+	iv) Application Login:- We can enter the login credentials if we know but only for one form or  multiple form
+		- We can check the respose of particular JS in new tab > right click and show response in browser
+
+C) Sequencer and scanner:-
+	i) Sequencer:- Calculate the randomness of String,token,data,URI or check the common things
+		- Goto Proxy > display proxy put into sequencer
+		- once add in sequencer then goto "SEQUENCER" 	
+		i) Select live capture request is automatically added
+		ii) Token within response we get automarically  "COOKIE"  it shows directly or easy way to use  custome cookie
+		under the set cookie  
+		ii) Start live capture
+		iv) Stop token capture > Analyze it is good,poor,excellent > copy token and paste into blank file
+		v) We can test on cookies security
+	ii) Scanner only in enterprises mode
+
+D) Repeater:-
+	- We can add into "REPEATER" and check the "RESPONSE" that we get 
+	- We can change "REQUEST" as per tester side
+
+E) Intuder and Comparer
+	i) Intuder:- 
+		- It is automated fuzzing	
+		- Intruder attacks on payload (Position) 
+		- For eg. Login fields 	we put user name - suraj9110@gmail.com and password should entered wrong.
+		- When its capture then > Send to the Intruder and set the attacks 
+		- Goto > Intruder tab > goto Positions > They are automatically highlights fuzz position (Payloads) that we can fuzz
+		- There are four types of attack :
+		1) Sniper:- 	
+		- In this no. of highlights fields test to no of payload. (For eg. password > We have 8 strings they will test into no.highlights fields each and every position "8 x no.position")
+		2) Battering Ram:-
+		- In this only one string can be test at a time for no. of highlighted position
+		3) Pitchfork:-
+		- In this when we goto "PAYLOAD" tab they are showing the list of highlighted position that we can provide different list of strings	
+		4) Cluster Bomb:-
+		-  In this they can try permutation and combination
+		
+		>Clear the highlighted position > select the position which we wants to fuzz > and Click on "ÄDD"  button (For example - "password" position)
+		> When select "Simple List" payload types and enter the combination of data or we can provide external list
+		> "Add from list" this only for (Proversion Only), in this we have predefined password script list  like SQL injection scripting, Cross-site scripting
+
+		- Payload Processign > We can set the payload processing rules
+		- "Option" tab > Request Header > Already checked 
+		- "Option" tab > Request Engine > only for "Pro version only" we can set the speed of request engine
+		-  Click on > Start Attack
+		- Once find the attack pop-up > Check the length > different length > Click right click > send to compare (Response) one is differnet and one is base request(wrong)
+		- "Regix" is the regular expression of the password for example A@13** 

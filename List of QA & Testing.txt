@@ -1,0 +1,68 @@
+Performance & Load Testing Tools
+
+Apache JMeter
+HP LoadRunner
+HP StormRunner
+NeoLoad
+LoadImpact
+WebLOAD
+LoadUI NG Pro
+LoadView
+AppLoader
+Appvance
+SmartMeter.io
+
+
+Security Testing Tools
+
+SQLMap
+Websecurify
+Safe3 Scanner
+Samurai Framework
+Nikto
+Aircrack
+OpenVAS
+Metasploit
+Nmap
+Wireshark
+
+
+Bug Reporting Tools
+
+tlassian JIRA
+Mantis
+Bugzilla
+Plutora Test
+Backlog
+Trac
+Redmine
+HP ALM
+FogBugz
+IBM Rational ClearQuest
+Lighthouse
+BugNET
+eTraxis
+Team foundation server
+
+Automation Testing Tools
+
+Appium
+MonkeyTalk
+Robotium
+UI Automator
+Selenium
+Cucumber
+Silk Test
+Eggplant
+RSpec
+
+
+Programming Languages
+
+C/C++
+Java
+SQL
+Python
+Perl
+XML
+HTML / CSS

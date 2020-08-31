@@ -1,0 +1,55 @@
+**** Five common performance testing mistakes****
+- Not enough time for testing.
+- Not involving developers.
+- Not using QA system similar to production system.
+- Not sufficiently tuning software.
+- Not having a troubleshooting plan.
+
+A) Most Common Problems Observed in Performance Testing
+
+- During performance testing of software, developers are looking for performance symptoms and issues. Speed issues — slow responses and long load times for example —
+ often are observed and addressed. But there are other performance problems that can be observed:
+
+1. Bottlenecking — This occurs when data flow is interrupted or halted because there is not enough capacity to handle the workload.
+2. Poor scalability — If software cannot handle the desired number of concurrent tasks, results could be delayed, errors could increase, or other unexpected behavior could happen that affects:
+- Disk usage
+- CPU usage
+- Memory leaks
+- Operating system limitations
+- Poor network configuration
+3. Software configuration issues — Often settings are not set at a sufficient level to handle the workload.
+4. Insufficient hardware resources — Performance testing may reveal physical memory constraints or low-performing CPUs.
+
+B) Seven Steps of Performance testing
+1. Identify the testing environment.
+2. Identify performance metrics.
+3. Plan and design performance tests.
+4. Configure the test environment.
+5. Implement your test design.
+6. Execute tests.
+7. Analyze, report, retest.
+
+C) What is performance test metrics
+- Measurements — The data being collected such as the seconds it takes to respond to a request.
+- Metrics — A calculation that uses measurements to define the quality of results such as average response time (total response time/requests).
+
+1. Response time
+2. Wait time
+3. Average load time
+4. Peak response time
+5. Error rate
+6. Concurrent users
+7. Requests per second
+8. Transactions passed/failed
+9. Throughput
+10. CPU utilization
+11. Memory utilization
+
+D) Performance Testing Best Practices
+- Involve developers, IT and testers in creating a performance testing environment.
+- Remember real people will be using the software that is undergoing performance testing. Determine how the results will affect users not just test environment servers.
+- Go beyond performance test parameters. Develop a model by planning a test environment that takes into account as much user activity as possible.
+- Isolate the performance test environment from the environment used for quality assurance testing.
+- Keep the test environment as consistent as possible.
+
+
