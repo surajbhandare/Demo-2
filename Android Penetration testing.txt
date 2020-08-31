@@ -1,0 +1,256 @@
+Android penetration testing
+
+1) Setting up Android Testing Lab
+	SANTOKU (https://santoku-linux.com/) for the Mobile forensics, Mobile malware, Mobile Security
+- Linux Based OS
+
+- Need virtual box (For Free Windows,Mac and linux) use for the virtualization
+  https://www.virtualbox.org/
+
+- GENYMOTION is the fastest emulator to run the android OS
+  https://www.genymotion.com/
+
+- Download the iso image for Santoku OS
+
+2) Create Virtual Machine of the SANTOKU OS
+	- Open the Virtual box 
+	- Create new VM  > Name Android Testing Lab > Select type "LINUX" and Version "Ubuntu 64bit"
+	- Memory Size > 4gb 
+	- File Location size > 25 gb 
+	- Open the VM > Upload the iso file on that 
+	- Select option > Start the installer directly 
+	- Open Terminal In SANTOKU > Cntrl + Alt + T
+	- Use full screen mode > Guest VB
+
+After Installation Login Command
+	- cd ..
+	- cd ..
+	- ls
+		/media/ls
+	- 
+
+3) Install Genymotion and add cutome device
+	- Connection would be Ethernet that will be get the correct ip address
+
+4) Android Debug Bridge
+	A) - Open Terminal into the SANTOKU 
+	- type "adb connect 192.168.5.189"
+	- ping 192.168.5.189
+	- adb devices > for conncted devices
+	- adb shell > that would be in shell of the genymotion
+	- after that root@android > cd /data/data
+	  root@android:/data/data ls (i.e list of android packages)
+	- if u want apk of that application : /data/data # cd ..
+	  /data # cd app	
+	  /data/app # ls (List of apk in Android phone)
+	- / cd mnt 
+	  /ls (list of directory like USB,asec,obb,sdcar,secure,shared)
+	- /mnt # cd sdcard/ (One of Directory name)
+	  /mnt/sdcard # ls
+	  list of external storage of genymotion android phone
+	- If we # exit (Exit from genymotion and entered to the SANTOKU OS)
+	- Install the apk file over genymotion
+	- cd Downloads/
+	  /Downloads$ ls (We will get the apk or all the downloaded files)
+	- Now install command for apk file
+	 adb install (name of apk file)
+	- apk install successfully
+	- After installation to check the package of APK
+		goto > abd shell
+		cd /data/data/
+		# ls
+	  (After that we can see the install packages of application)
+	- After > Go inside the application > # cd com.bollywoodmdb 
+	 (After that we can see the whole content of directories)
+	- Then we have to come back > cd .. (Into the data/data)
+	- Come back to the application i.e > exit
+	- Apply query > adb uninstall (App package name > )
+	- If # adb shell ps (All the process list we can see)
+	- if # adb shell ls (All the listed which have present into the genymotion)
+	
+	B) logcat (Center repository of all the logs)
+		- # adb logcat
+
+	C) We can push the app from GENYMOTION to SANTOKU (Desktop)
+		- copy the apk from list
+		- cd Desktops/
+		- $ Desktop/ adb pull /data/app/(Name of Apk - Copy paste)
+		- We can push from desktop to genymotion
+		   $ Desktop/ adb push (Name of Apk) /data (Directory) 
+
+	D) Android Start up Process
+		- goto > adb shell
+		- > ps (Process list) 
+		- After that we can see the "init"
+		- These are present in list
+		- For particular list we will type the > # ls | grep "init"
+		- For zygote > # ps | grep "zygote"  
+		- We get the PID which is init process that include in zygote
+
+	E) Unzipping Android Application
+		- Goto Desktop > $ cd Desktop/
+		- /Desktop$ ls (We can see the list of apk on the desktop)
+		- We have to write the on directory for unzip apk 
+			/Desktop$ unzip -d demo (Demo is the folder name which we save the unzip file) com.bollywoodmdb-1.apk
+		- After that we got the directory created  folder on desktop
+		- Go inside the directory > $Desktop cd apidemo
+
+	F) Reversing Android Application (Decompiling App)
+		1) - /Desktop$ apktool (bydefualt install) d (Directory for Decompile) com.bollywoodmdb-1.apk
+		- After decompiling /Desktop cd ApiDemos (Decompiling folder)
+		- After that we check the source code of menifest.xml file
+			vim androidmenifest.xml`
+		- After that we got the different resource
+		- cd smali > check the every different phases
+
+		2)  Another Way to Decompile
+			- Install JADX (https://github.com/skylot/jadx/releases/tag/v1.1.0) 
+			- Copy the link file and paste into terminal 	
+				> wget https://github.com/skylot/jadx/releases/download/v1.1.0/jadx-1.1.0.zip
+			- Unzip the file > unzip -d jadx (zip file name)
+			- Open new terminal > cd Desktop/ 
+			- Copy the Apk file into cp (apk name) jadx/bin 
+			- Check the list that apk copy into bin folder
+			- For remove file > rm -r -f (file name)
+			- We got the jadx file after that
+			- > ./jadx -d (folder name that we have to save) 
+	
+	G) Application signing and Building 
+		- About CA certificate and self sign certificate
+
+	H) Analyzing DEX file
+		- Dalvik Executable file
+		- 010 editor (Tool for binary )
+		- Unzip Apk file (unzip -d Test1 apk file)
+		- Got to the Demo File which we have created on Desktop of Apk file`
+		- After That Go to the file And entered directory i.e hexdump classses.dex | less (It is only hex format)
+		- there is one parameter for Dexdump i.e. -l (Plain text and XML)
+			- dexdump -l plain  classes.dex | less (this is for plain text)
+			- dexdump -l xml classes.dex | less (this is for xml)
+		- There is one editor (010 editor) i.e sweetscape.com/download/010editor/
+		- For the tar unzip :- tar xvf (tar file )
+		- For any installer to execute use the (./name of installer)
+		- Another method is called utility :- it is in Utility dex2jar
+		- To check it is java file or  not :- file (converted jar file)
+		- Top open the jar file :- jd-gui (Converted jar file)
+		
+	We can analyze the DEX file
+
+	
+	I) Owasp Mobile Top 10
+		- 
+
+
+	-: Vulnerability Of the Android Applications :-
+
+	J) Android Traffic Analysis & Interception
+		- Use the burp suite and install the CA certificate
+
+
+
+	K) Damn Insecure and Vulnerable App
+		- Install the DIVA app (Damn Insecure and Vulnerable App)
+		- i.e www.payatu.com/damn-insecure-and-vulnerable-app
+		- Install the DIVA apk
+
+	J) Insecure Logging
+		- Unzip the apk > unzip -d (Folder) (apk file)
+		- After unzipping convert the file into jar i.e classes.dex to classes.jar
+			use > d2j-dex2jar (classes.dex)
+		- After that use jd-gui (Converted jar file)
+	
+	K) Hardcoding Issue
+		- something store sensetive inside the source code application.
+
+	L) Insecure Data Storage
+		- User name/Password/Token these are insecure 
+		- Go to the > adb shell
+			> cd /data/data
+			> /ls
+			> cd com.bollywoodmdb (Package name)
+			> /ls
+			> list of all directory 
+			> cd shared_prefs
+				- We get the preference file 
+			> We have to see in that file what actually data presents
+				- cat 
+			> Only check the data 
+
+	K) Database Insecure Storage
+		- Analyze the jar file with help of jd-gui
+		- Go to the > adb shell
+			> cd /data/data
+			> /ls
+			> cd com.bollywoodmdb (Package name)
+			> /ls
+			> list of all directory 
+			> cd databases/
+			> When database table is displayed the enter command i.e. > sqlite3 (Database table name)
+
+	L) Temporary Files Insecure Storage
+		- Go to the directory i.e > cd networrk
+		- open the jar file > jd-gui (converted jar file name)
+		- Go to the > adb shell
+			> cd /data/data
+			> /ls
+			
+
+	M) External Insecure Data Storage
+		Go to the directory i.e > cd networrk
+		- open the jar file > jd-gui (converted jar file name)
+		- Go to the > adb shell
+			> cd /data/data
+			> /ls-la
+			- There is no ufo 
+			> after that change the directory 
+				- cd mnt/sdcard 
+				- after that use > ls -a(for the all hidden files)
+				- if u find hidden .uinfo.txt  then use > cat .uinfo.txt
+
+	N) SQL injection in Android
+		- SQL injection "Search Payload" :- https://prnt.sc/rbdviu
+
+
+	O) Abusing Web View in Android (Input Validation Issues)
+		- Protocols supported by Browser
+			> http
+			> https
+			> ftp
+			> file :- We can access system internal files 
+			> smtp
+
+
+	P) Access Control Issues
+		- am (activity manager)
+		- am start -a (Package Name)
+
+
+	Q) Authentication Based Access Control Issues
+
+		- use > adb shell am start -a (package Name com.bollywoodmdb)
+		- use > am (Activity Manager) into the adb shell
+	
+
+	R) API Hooking 
+		- Tools for API hooking :- Java Debugger 
+				       Intospy
+		                                          Cydia Substrate	
+				      AndBug (We can use)
+				      Etc.
+		- https://github.com/swdunlop/AndBug  (For Tool)
+		- For Git clone Repository use > git clone (URL of Clone)
+		- Install Andbug Setup us > python setup.py install 
+			- They ask admin previledges like PWD
+			- After that use command > adbug 
+			- Find the PS of particular app
+			- use > AndBug > adb shell ps | grep "BMDB"
+			- After getting the PID use > andbug shell -p 3336
+			- Entering the andbug shell > find the (Classes)
+			- After andbug > method-trace (Method for hooked)
+
+	S) JDB Java Debugger
+		- We can debug the java applications
+		- Use > adb jdwp 
+		           - After that we get the java debugger process ID that we can debug
+		- Setup for tcp > adb forward tcp:5555 jdwp:1501 (PID)
+		- After that attach jdb > jdb -attach localhost:5555
