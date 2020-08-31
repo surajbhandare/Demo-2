@@ -1,0 +1,61 @@
+REST API (Representational State Transfer):- REST APIs uses multiple standards like HTTP, JSON, URL, and XML while SOAP APIs is largely based on HTTP and XML.
+	- USe for media components, files, or even objects on a particular hardware device.
+	-  Restful service would use the normal HTTP verbs of GET, POST, PUT and DELETE for working with the required components.
+	- REST is the architectural pattern.
+	- REST permits different data format such as Plain text, HTML, XML, JSON, etc. But the most preferred format for transferring data is JSON.
+SOAP API (Simple Object Access Protocol) :- The main idea behind designing SOAP was to ensure that programs built on different platforms and programming languages 
+				  could exchange data in an easy manner.
+				- Includes WSDL what is the web services addition to the location of the web service.
+				- SOAP is the Protocol 
+				- SOAP can work only XML format, all the data passes from XML format
+1.) Download the SOAP UI software (OpenSource)
+
+2.) Basic Components and Configurations:- 
+	- It is the Cross Platform Tool 
+	- Built Entirely over java platform
+	- Uses Swing for  GUI
+	- Heirarchy in SOAPUI is    (Project > Test Suite > Test Case > Test Step
+
+3.) Create Project:-
+	- Create Empty Project 
+	- Create "New REST Service From URI"
+	- Entered URI which we want to rest api for eg. GET api
+
+4.) Create SOAP test  project:-
+	- Click on SOAP button
+	- Use WSDL services for country list 
+	-  Copy or Browse WSDL List into "INITIAL WSDL"
+    	- Once Browse automatic create the Project of  "Country Info Services" 
+	- We will get the country related api's according them we will test the respponse
+	- We create the test suite and test cases according WSDL 
+		- Right Click on "CountryInfoServiceSoapBinding"   and click on "Generate TestSuite".
+	Create test Suite >  After creating test suite one by one make request and check it is right or wrong.
+	ADD Assertion > After that click on assertion button and add what to test for (For eg. IN > country ISO code)
+	Run the test case > We can run test suite level, single test case or we can single request level.
+
+5.)  Create REST test  project:-
+	- Create REST project
+	- Click on File > New REST project or Click on REST button
+	- Go to browser search "Sample REST country api"
+	- Copy URI into REST api and click on OK button
+	- When we want another REST api then  right click on REST and select New REST service from URI 
+	-  We can create parameter into request for eg. Name   		Value	Style		Level
+					      countryName	india	TEMPLATE	RESOURCE
+	- Create Test Suit > Test Case > run
+	- Add assertion to check dat is VALID or INVALID
+
+6.) Use Of PROPERTIES:-
+	- Click on save project > bottom side > Click on "Property" tab and add 
+	- Add propertie as > Project Level , TestSuite Level, Test Case(Run) Level
+	- When property add TestCase Level just right click on Test Case adn add "Properties"
+	- Property accessed by following levels
+		- Project 		- ${#Project#PropertyName}
+		- TestSuite		- ${#TestSuite#PropertyName}
+		- TestCase		- ${#TestCase#PropertyName}
+		- TestStep		- ${#TestStep#PropertyName}
+
+	- Using the above syntax we can test and set the property and test as well but we need to set the property for all 
+	- Groovy Script (Watch Session)
+	- For Groovy Scrip use :- 	log.info "Hello Boppo"
+				def name = context.expand('${#Project#CountryName}')
+				log.info ("Properties name is   : "+name);
