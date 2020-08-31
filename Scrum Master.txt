@@ -1,0 +1,17 @@
+A. Scrum Master:- Scrum is a agile methadology frame work, it can be manage iterative and incremental project all type.
+	- Product develope in sprints
+	- People Work as a Single team 
+	- Constantly deliver functioning products
+	- Feedback From Customer
+
+B. Process Of SCRUM:- There are different role in SCRUM
+	1. Product Owner - Responsible team work
+	2. Scrum Master - Is the faciliatator to helping team members follow Scrum's Theories, Rules, and practices.
+		- Srcum Removing road blocks of the process,Organize meetings, Dealign with challenges
+	3. Development Team
+
+C. Scrum Artifacts:- it is includes PRODUCTS BACKLOG, SPRINT BACKLOG, AND PRODUCT INCREMENTS.
+	1. Product Backlog:- Lists of product task and requirements the final product needs.
+	2. Sprint Backlog:- Product backlog list need to be work on during sprint.(Based on skill,priority)
+	3. Burndown chart:- Graphical Representing of estimated remaining work
+	4. Product Increments:- It is the completed work in a sprint and combine the work completed in previous sprint.
