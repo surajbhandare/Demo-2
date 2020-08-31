@@ -256,4 +256,4 @@ After Installation Login Command
 		- After that attach jdb > jdb -attach localhost:5555
 
 
-Sample
+Testing on server
