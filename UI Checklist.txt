@@ -1,0 +1,51 @@
+UI CHECKLIST
+
+1.Font styles - Font size, colour, and family
+
+2. Check CSS properties of an element
+
+3. Check if the images are not breaking and don’t have any watermarks
+
+4. Check if elements are not breaking or distorted on different browsers and screen resolutions
+
+5. Check if the label text is clearly readable
+
+6. Check if the error and validation messages are displaying correctly
+
+7. Check if there are no spelling mistakes in the field labels and web page headings
+
+8. Check if the disabled fields are not accepting any input
+
+9. Check if the links are visible and distinguishable from the other text
+
+10. Check if the social networking icons are rightly placed on sites
+
+11. Check if there are no broken links on the web page
+
+12. Check if there are no unnecessary blank spaces between the elements on the web page
+
+13. Check if the horizontal and vertical scrollbars are appearing wherever necessary
+
+14. Check if site logo is visible and clickable
+
+15. Check if the web elements are not overlapping anywhere on the web page
+
+16. Check if banner images or any other large images are not exceeding the screen limit
+
+17. Check if the Privacy policy links are readable and clickable
+
+18. Check if the Cookie policy section is visible with buttons and contents
+
+19. Verify if elements in the dropdown are not overlapping
+
+20. Check if the menu or submenu that is selected remains highlighted
+
+21. If there are any country fields or phone number fields, check if the country codes are displayed correctly
+
+22. Check if autofill function is working as expected and that there are no UI issues
+
+23. If there are any maps on the site, check if the user is able to zoom in and zoom out the map without any UI distortion.                Check if the user is able to see the locations on maps
+
+24. For any reports or charts check if the figures are displayed accurately
+
+User Interface is the most crucial part of an application and hence it becomes essential to keep such checks handy to avoid any UI issues being missed during testing.
