@@ -254,3 +254,6 @@ After Installation Login Command
 		           - After that we get the java debugger process ID that we can debug
 		- Setup for tcp > adb forward tcp:5555 jdwp:1501 (PID)
 		- After that attach jdb > jdb -attach localhost:5555
+
+
+Sample
