@@ -1,0 +1,55 @@
+A) In browser only "GET" method use
+
+B) GET method for only request
+
+C) In browser POST method does not work because we can only entered 
+
+D) https://restfulapi.net/http-methods/#patch (For the Reading)
+
+E) 200 - Ok
+     404 - Page not found
+     500 - Internal Server error 
+     400 - Bad Request 
+     202 - Handshake Request
+
+F) Methods of API Security Testing 
+	1) Fuzz Testing :- (Anything we can enter)
+		- It is one of the simple and common ways to test the delicacies in a web service.
+		- It is basically a black box software testing technique which includes finding bugs using malformed data injection.
+		- You can simply use the command lines like curl and simply send some unexpected value to API and check if it breaks.	
+		- For example: {Text (Command Line)}
+	
+	2) Fuzz Testing Numbers :- (We can enter Negative and positive number)
+		- If your API expects numbers in the input, try to send values such as (negative numbers, 0, and large digit numbers).
+		- For example: {Password (0-1,33333333333)} 
+
+	3) Fuzz Testing Strings :- (We can enter SQL Queries) 
+		- The best way of fuzz testing strings is to send SQL queries in a criterion 
+		- API will not run any SQL sent is a request
+		- For example: {Password (select * from user where id = "1"; )} 		
+		- API by entering a command  ?command=rm -rf / within one of the query parameter.
+			A)  https://example.com/delete?name=file.txt;rm%20/
+			B) SQL in API parameters :- 
+				- $name = $_GET[‘username’]; 
+				   runDbTransaction(“UPDATE user SET username=$name WHERE id = …”)
+	
+	4) Test Unhandled HTTP Methods :- 
+		- API that uses HTTP have various methods that are used to retrieve, save and delete data.
+	
+	5) Parameter Tampering :-
+		- It takes the advantage of backend sanitizing errors and then manipulates parameters sent in API requests.
+		- use ( type=”hidden” ) input should always be tested in order to make sure that backend server correctly validates them.\
+		- For Example :- <input type=”hidden” name=”price” value=”100.00? />
+
+G) Input :- 
+	1. Use the proper HTTP method according to the operation :- 
+		- GET (read), 
+		- POST (create), 
+		- PUT/PATCH (replace/update), 
+		- DELETE (to delete a record), and respond with 405 Method Not Allowed if the requested method isn't appropriate for the requested resource.
+ 	
+	2. Validate content-type on request Accept header (Content Negotiation) to allow only your supported format (e.g. application/xml, application/json, etc.) and respond with 406 Not 	Acceptable response if not matched.
+ 	3. Validate content-type of posted data as you accept (e.g. application/x-www-form-urlencoded, multipart/form-data, application/json, etc.).
+ 	4. Validate user input to avoid common vulnerabilities (e.g. XSS, SQL-Injection, Remote Code Execution, etc.).
+ 	5. Don't use any sensitive data (credentials, Passwords, security tokens, or API keys) in the URL, but use standard Authorization header.
+	6. Use an API Gateway service to enable caching, Rate Limit policies (e.g. Quota, Spike Arrest, or Concurrent Rate Limit) and deploy APIs resources dynamically.
