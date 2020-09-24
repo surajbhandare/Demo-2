@@ -1,9 +1,12 @@
-<html>
-<title>
-HTML WEB
-</title>
-<body>
- Hello World 
-</body>
+package aws;
 
-</html>
+public class awsdemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Hello World");
+		
+	}
+
+}
