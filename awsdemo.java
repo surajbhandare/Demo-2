@@ -9,7 +9,7 @@ public class awsdemo {
 		bool1 = true;
 		bool2 = false;
 		result = bool1 || bool2 ;
-	System.out.println("This is value > " + result);
+	System.out.println("This is value s " + result);
 	}
 
 }
